@@ -5,7 +5,6 @@
 ####################################
 
 paquete=teamviewer
-input=$1 #Definimos función de entrada.
 
 function instalador() {
 dpkg -s $paquete
