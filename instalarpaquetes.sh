@@ -4,19 +4,12 @@
 #     DESARROLLADO POR Juanjo      #
 ####################################
 
-paquete=teamviewer
+#!/bin/sh
 
-function instalador() {
-dpkg -s $paquete
-if [[ $? -eq 0 ]]
-then
-  echo "el paquete ${paquete} se encuentra instalado"
-  exit 0
-else
-  echo "el paquete ${paquete} no se encuentra instalado"
-  echo "procediendo a instalar ${paquete}"
-  apt install-y $paquete
-fi
-}
-
-instalador
+for P; do
+    dpkg -s "$P" >/dev/null 2>&1 && {
+        echo "$P is installed."
+    } || {
+        echo "$P is not installed."
+    }
+done
