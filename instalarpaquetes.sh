@@ -4,6 +4,7 @@
 #     DESARROLLADO POR Juanjo      #
 ####################################
 
+paquete=teamviewer
 input=$1 #Definimos función de entrada.
 
 function instalador() {
@@ -18,10 +19,5 @@ else
   apt install-y $paquete
 fi
 }
-if [[ -f $input ]]
-then
-  for paquete in $input; do instalador; done
-else
-  paquete=$input
-  instalador
-fi
+
+instalador
