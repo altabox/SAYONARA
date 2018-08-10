@@ -5,12 +5,11 @@
 ####################################
 
 
-P=teamviewer
-
-for P; do
-    dpkg -s "$P" >/dev/null 2>&1 && {
-        echo "$P is installed."
-    } || {
-        echo "$P is not installed."
-    }
-done
+if ! which teamviewer > /dev/null; then
+   echo -e "Paquete no encontrado ¿Instalar? (y/n) \c"
+   read
+   if "$REPLY" = "y"; then
+      sudo apt-get install teamviewer
+   fi
+   
+fi
