@@ -4,7 +4,8 @@
 #     DESARROLLADO POR Juanjo      #
 ####################################
 
-#!/bin/sh
+
+P=teamviewer
 
 for P; do
     dpkg -s "$P" >/dev/null 2>&1 && {
